@@ -1,0 +1,179 @@
+.col {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    animation: 0.5s ar;
+}
+
+@keyframes ar {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 28px;
+}
+
+.passwordInp_2 {
+    border: none;
+}
+
+.passwordInp_2:focus {
+    outline: none;
+}
+
+.passwordInp_1 {
+    padding: 5px;
+    margin: 5px;
+}
+
+.passwordInp_1Err {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid red;
+}
+
+.passwordInp_1:focus {
+    outline: none;
+}
+
+.passwordInp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 4px;
+    margin: 5px;
+}
+
+.passwordInpReg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 4px;
+    margin: 5px;
+}
+
+.passwordInpRegErr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+    padding: 4px;
+    margin: 5px;
+}
+
+.passwordInpErr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+    padding: 4px;
+    margin: 5px;
+}
+
+.passwordInp_2:focus .passwordInp{
+    border: 2px solid black;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    animation: 0.5s ar;
+}
+
+.bottomBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 5px;
+}
+
+.err {
+    margin-left: 5px;
+    color: red
+}
+
+.err2 {
+    color: red
+}
+
+.none {
+    display: none;
+}
+
+.red {
+    color: red;
+    font-family: monospace;
+}
+
+.green {
+    color: green;
+    font-family: monospace;
+}
+
+.logo {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.logoBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: orange
+}
+
+.orange {
+    background: orange;
+    border: none;
+}
+
+.appear {
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: 0.4s appear;
+}
+
+.disappear {
+    display: none;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        top: -50px;
+    }
+    100% {
+        opacity: 1;
+        top: 10px;
+    }
+}
+

@@ -1,0 +1,122 @@
+.asd {
+    position: relative;
+    width: 100%;
+}
+
+.cont {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.topBlock {
+    padding: 10px;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.userTitle {
+    color: orange;
+    margin: 10px;
+}
+
+.ava {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.col {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.blue {
+    color:deepskyblue;
+}
+
+.orange {
+    background: orange;
+    border: none;
+}
+
+.userInfo {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.friends {
+    color: orange; 
+}
+
+.postBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+#fileInp {
+    display: none;
+}
+
+.icon {
+    width: 48px;
+    margin-top: 10px;
+    border-radius: 100%;
+}
+
+.icon:active {
+    box-shadow: 0 0 5px green;
+}
+
+.textarea {
+    width: 300px;
+    height: 100px;
+    border: none;
+    resize: none;
+    border-radius: 10px;
+    color: orange
+}
+
+.textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.inpRight {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btnPost {
+    border: none;
+    padding: 5px 10px;
+    background-color: deepskyblue;
+    color: white;
+    border-radius: 10px;
+}
+
+.btnPost:hover{
+    box-shadow: 0 0 10px deepskyblue ;
+}
+
+.btnPost:active {
+    background-color: white;
+    color: deepskyblue
+}
+
+.postImg {
+    max-width: 300px;
+    min-width: 50px;
+}

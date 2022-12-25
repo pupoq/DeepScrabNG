@@ -1,0 +1,36 @@
+<div class="cont ">
+    <div class="topBlock">
+        <div class="col">
+            <div>
+                <img class="ava" src="{{user.img ? '{{user.img}}' : 'https://cdn-icons-png.flaticon.com/512/1256/1256450.png?w=740&t=st=1671868038~exp=1671868638~hmac=0bc0e24d12f61072802bdacf48a3c0122092bcbe1fb9ea4130c4c3a8ad28da9a'}}">
+                <div class="userInfo">
+                    <div class="friends">Friends: {{user.followers.length}}</div>
+            </div>
+        </div>
+            <div>
+                <h1 class="userTitle">{{user.fullName}}</h1>
+                <h3 class="userTitle blue">{{user.login | lowercase }}</h3>
+                <button class="btn btn-success orange">Settings</button>
+            </div>
+        </div>
+    </div>
+    <div class="bottomBlock">
+        <div class="postBlock">
+            <div>
+                <textarea [(ngModel)]="postText" placeholder="Create a new post" class="textarea" type="text"></textarea>
+                <img class="postImg" [src]="image"/>
+            </div>
+            <div class="inpRight">
+                <button class="btnPost" (click)="show()">Post</button>
+                <label for="fileInp">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5629/5629438.png">
+                    <input (change)="getFile($event)" id="fileInp" type="file">
+                </label>
+            </div>
+        </div>
+        <div *ngFor="let item of posts">
+            <div>{{item.description}}</div>
+            <img class="postImg" src="{{item.img}}" alt="">
+        </div>
+    </div>
+</div>

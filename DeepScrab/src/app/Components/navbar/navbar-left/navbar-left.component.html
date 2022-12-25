@@ -1,0 +1,31 @@
+<div class="box-shadow {{open ? 'asd' : 'asd2'}}">
+    <div class="shadow full">
+        <div (click)="toggle()" class="burgerBtn">
+            <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/5629/5629505.png">
+        </div>
+        <div class="link" routerLink="home">
+            <img class="ava" src="{{user.img ? '{{user.img}}' : 'https://cdn-icons-png.flaticon.com/512/1256/1256450.png?w=740&t=st=1671868038~exp=1671868638~hmac=0bc0e24d12f61072802bdacf48a3c0122092bcbe1fb9ea4130c4c3a8ad28da9a'}}">
+            <div class="menu-title {{open ? '' : 'none'}}">{{user.fullName}}</div>
+        </div>
+        <div class="link" routerLink="news">
+            <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432539.png">
+            <div class="menu-title {{open ? '' : 'none'}}">News</div>
+        </div>
+        <div class="link" routerLink="friends">
+            <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432428.png">
+            <div class="menu-title {{open ? '' : 'none'}}">Friends</div>
+        </div>
+        <div class="link" routerLink="messages">
+            <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432386.png">
+            <div class="menu-title {{open ? '' : 'none'}}">Messages</div>
+        </div>
+        <div class="link" routerLink="events">
+            <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432398.png">
+            <div class="menu-title {{open ? '' : 'none'}}">Events</div>
+        </div>
+    </div>
+    <div class="link end" >
+        <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/505/505027.png">
+        <div class="menu-title {{open ? '' : 'none'}}">Log out</div>
+    </div>
+</div>

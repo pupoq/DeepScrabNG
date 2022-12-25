@@ -1,0 +1,46 @@
+<div class="col">
+    <div class="logoBlock">
+        <h2 style="animation: 0.5s ar">{{toggleBlock ? 'Sign Up' : 'Sign In'}}</h2><img class='logo' src="https://cdn-icons-png.flaticon.com/512/1256/1256450.png?w=740&t=st=1671868038~exp=1671868638~hmac=0bc0e24d12f61072802bdacf48a3c0122092bcbe1fb9ea4130c4c3a8ad28da9a" alt="" />
+    </div>
+    <div class="err2">{{error == 1 ? 'Incorrect username or password' : ''}}</div>
+    <div class="login" *ngIf="!toggleBlock">
+        <div><b>Login</b><span class="err">{{error !== 401? '' : 'User not found'}}</span></div>
+        <input class="{{error !== 401 ? 'passwordInp_1' : 'passwordInp_1Err'}}" maxlength="21" [(ngModel)]="loginInp" type="text">
+        <br>
+        <div><b>Password</b><span class="err">{{error !== 400 ? '' : 'Incorrect password'}}</span></div>
+        <div class="{{error !== 400? 'passwordInp' : 'passwordInpErr'}}">
+            <input [(ngModel)]="passwordInp" maxlength="21" class="passwordInp_2" type="{{hidden ? 'text' : 'password'}}">
+            <img (click)="toggle()"  class="icon" src="{{hidden ? 'https://cdn-icons-png.flaticon.com/512/2874/2874802.png' : 'https://cdn-icons-png.flaticon.com/512/2355/2355322.png'}}" alt="">
+        </div>
+        <br>
+        <button class="btn btn-success orange" (window:keypress)="onSomeAction(login)" (click)="login()">Sign In</button>
+    </div>
+    <div class="register" *ngIf="toggleBlock">
+        <div><b>Login</b><span class="err">{{error == 403 ? 'Login already exists' : ''}}</span></div>
+        <input class="{{error !== 403 ? 'passwordInp_1' : 'passwordInp_1Err'}}" maxlength="21" [(ngModel)]="regLoginInp" type="text">
+        <div><b>Nickname</b></div>
+        <input class="passwordInp_1" maxlength="21" [(ngModel)]="regNicknameInp" type="text">
+        <div><b>Password</b></div>
+        <div class="passwordInpReg">
+            <input [(ngModel)]="regPasswordInp" maxlength="21" class="passwordInp_2" type="{{hidden1 ? 'text' : 'password'}}">
+            <img (click)="toggle1()" class="icon" src="{{hidden1 ? 'https://cdn-icons-png.flaticon.com/512/2874/2874802.png' : 'https://cdn-icons-png.flaticon.com/512/2355/2355322.png'}}" alt="">
+        </div>
+        <div><b>Confirm password</b></div>
+        <div class="{{regPasswordInp == regPasswordInpConfirm ? 'passwordInpReg' : 'passwordInpRegErr'}}">
+            <input [(ngModel)]="regPasswordInpConfirm" maxlength="21" class="passwordInp_2" type="{{hidden2 ? 'text' : 'password'}}">
+            <img (click)="toggle2()" class="icon" src="{{hidden2 ? 'https://cdn-icons-png.flaticon.com/512/2874/2874802.png' : 'https://cdn-icons-png.flaticon.com/512/2355/2355322.png'}}" alt="">
+        </div>
+        <p class="err">{{regPasswordInp == regPasswordInpConfirm ? '' : 'The password does not match'}}</p>
+        <div class="{{passwordCheck ? 'block' : 'none'}}">
+            <p class="{{regPasswordInp.length >= 6 ? 'green' : 'red'}}">Password is too short</p>
+            <p class="{{regPasswordInp.match(numbers) ? 'green' : 'red'}}">Password needs a number</p>
+            <p class="{{regPasswordInp.match(lowerCase) ? 'green' : 'red'}}">Password needs a lowercase letter</p>
+            <p class="{{regPasswordInp.match(upperCase) ? 'green' : 'red'}}">Password needs a uppercase letter</p>
+        </div>
+        <button class="btn btn-success orange" (window:keypress)="onSomeAction(register)" (click)="register()">Sign Up</button>
+    </div>
+    <div class="bottomBlock">
+        <p>{{toggleBlock ? 'Already have an account?' : 'New to DeepScrab?'}}</p><span (click)="toggle3()" style="color: blue">{{toggleBlock ? 'Sign In' : 'Create an account'}}</span>
+    </div>
+    <div class="{{message ? 'appear': 'disappear'}}">User created</div>
+</div>

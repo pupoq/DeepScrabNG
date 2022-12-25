@@ -1,0 +1,11 @@
+<div class="container column">
+    <div *ngIf="user" class="asd">
+            <app-navbar-left></app-navbar-left>
+            <div class="asd">
+                <router-outlet></router-outlet>
+            </div>
+    </div>
+    <div *ngIf="!user" class="login">
+        <app-login></app-login>
+    </div>
+</div>
