@@ -8,8 +8,8 @@ const postsRouter = require('./routers/postsRouter')
 const app = express()
 
 app.use(cors())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json({limit: '10mb'}))
+app.use(bodyParser.urlencoded({extended: true, limit: '10mb'}))
 
 app.use('/users', usersRouter)
 app.use('/posts', postsRouter)

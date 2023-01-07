@@ -14,4 +14,8 @@ export class FindOneService {
     let myProfile = JSON.parse(this.user)
     return this._http.get(`http://localhost:8080/users/${myProfile._id}`)
   }
+
+  getAllProfiles = () => {
+    return this._http.get('http://localhost:8080/users')
+  }
 }

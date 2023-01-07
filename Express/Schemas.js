@@ -7,7 +7,6 @@ const userSchema = new Schema({
     password: String,
     birth: String,
     posts: Array,
-    likes: Array,
     img: String,
     followers: Array,
     events: Array,
@@ -18,6 +17,7 @@ const postSchema = new Schema({
     img: String,
     description: String,
     owner: String,
+    fullName: String,
     likes: Array,
     createdAt: String,
     comments: Array

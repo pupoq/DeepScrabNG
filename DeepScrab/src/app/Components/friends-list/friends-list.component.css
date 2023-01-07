@@ -1,0 +1,51 @@
+.cont {
+    padding: 20px;
+}
+
+.ava {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.userCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: none;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.userNames {
+    margin-left: 10px;
+}
+
+.search {
+    padding: 20px;
+    background-color: rgb(255, 213, 135);
+    border-radius: 10px;
+}
+
+.left {
+    margin-left: 100px;
+}
+
+.searchInp {
+    background-color: rgb(255, 226, 172);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 20px;
+}
+
+.searchInp:focus {
+    outline: none;
+}

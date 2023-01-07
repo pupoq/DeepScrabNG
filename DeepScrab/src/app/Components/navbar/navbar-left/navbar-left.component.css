@@ -1,5 +1,6 @@
 .ava {
     width: 45px;
+    height: 45px;
     border-radius: 100%;
 }
 
@@ -85,6 +86,7 @@
 
 .menu-icon {
     width: 45px;
+    height: 45px;
 }
 
 

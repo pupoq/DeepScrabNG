@@ -1,0 +1,33 @@
+<div class="cont">
+    <div class="spinner-border text-warning {{!loading ? '' : 'none'}}" role="status">
+        <span class="visually-hidden top">Loading...</span>
+    </div>
+    <div class="{{!loading ? 'none' : ''}}">
+        <div class="dispRow">
+            <label for="fileInp" class="label">
+                <img class="ava"  [src]="user.img ? user.img : user.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                 
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/9220/9220671.png">
+                <input (change)="getFile($event)" id="fileInp" type="file">
+            </label>
+            <div class="dispCol left">
+                <img class="ava2 {{image ? '' : 'none'}}" src="{{image}}">
+                <img class="ava3 {{image ? '' : 'none'}}" src="{{image}}">
+            </div>
+            <button class="btn btn-success {{image ? '' : 'none'}} left" (click)="editAva()">Save</button>
+        </div>
+        <br>
+        <div>
+            Nickname: <span style="color: orange">{{user.fullName}}</span>
+            <br>
+            <br>
+            Birth: <input type="date">
+            <br>
+            <br>
+            Sex: <select>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="nya">Nya</option>
+                 </select>
+        </div>
+    </div>
+</div>

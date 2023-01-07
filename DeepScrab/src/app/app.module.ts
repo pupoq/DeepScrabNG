@@ -9,7 +9,9 @@ import { LoginComponent } from './Components/login/login.component';
 import { NavbarLeftComponent } from './Components/navbar/navbar-left/navbar-left.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
-import { NavbarTopComponent } from './Components/navbar/navbar-top/navbar-top.component';
+import { SettingsComponent } from './Components/settings/settings.component';
+import { FriendsListComponent } from './Components/friends-list/friends-list.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { NavbarTopComponent } from './Components/navbar/navbar-top/navbar-top.co
     LoginComponent,
     NavbarLeftComponent,
     HomeComponent,
-    NavbarTopComponent
+    SettingsComponent,
+    FriendsListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

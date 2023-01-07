@@ -1,0 +1,73 @@
+.cont {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#fileInp {
+    display: none;
+}
+
+
+.icon {
+    width: 48px;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+.label:hover {
+    box-shadow: 0 0 15px grey;
+}
+
+.label {
+    border-radius: 100%;
+    position: relative;
+}
+
+.label:active {
+    box-shadow: 0 0 15px grey;
+}
+
+.ava {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    filter: brightness(0.4);
+}
+
+.ava2 {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.ava3 {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.dispRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.none {
+    display: none;
+}
+
+.dispCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.left {
+    margin-left: 10px;
+}

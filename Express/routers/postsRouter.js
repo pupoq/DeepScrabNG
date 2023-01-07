@@ -9,18 +9,13 @@ postsRouter.get('/', async (req, res) => {
 
 
 postsRouter.post('/', async (req,res) => {
-    let {description, owner, img} = req.body
-
-    let currentDate = new Date()
-    let day = currentDate.getDate()
-    let month = currentDate.getMonth() + 1
-    let year = currentDate.getFullYear()
-    let createdAt = `${day}/${month}/${year}`
+    let {description, owner, img, fullName, ava, createdAt} = req.body
 
     let newPost = new models.Post({
         img, 
         description, 
         owner, 
+        fullName,
         createdAt,
         likes: [],
         comments: []
@@ -28,7 +23,7 @@ postsRouter.post('/', async (req,res) => {
 
     newPost.save()
 
-    res.status(200).send("Post created")
+    res.status(200).send(newPost)
 })
 
 postsRouter.get('/:id', async (req, res) => {
@@ -36,6 +31,13 @@ postsRouter.get('/:id', async (req, res) => {
     const posts = await models.Post.find({owner: owner})
 
     res.status(200).send(posts)
+})
+
+postsRouter.delete('/delete/:id', async (req, res) => {
+    const id = req.params.id
+    const deletedPost = await models.Post.deleteOne({"_id": id})
+
+    res.status(200).send(deletedPost)
 })
 
 postsRouter.post('/enroll', async (req, res) => {

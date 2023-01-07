@@ -1,0 +1,31 @@
+<div class="cont">
+    <div *ngIf="!loading" class="spinner-border text-warning" style="margin-top: 10px" role="status">
+        <span class="visually-hidden top">Loading...</span>
+    </div>
+    <div *ngIf="loading" class="search">
+        <input type="text" class='searchInp' name="search" [(ngModel)]="searchText" placeholder="Search by login">
+        <h5>Your followers</h5>
+        <h6 *ngIf="!checkFollowers">You dont have a followers</h6>
+        <div class="userCard" *ngFor="let item of user.followers | filter:searchText">
+            <div class="flexRow">
+                <img class="ava"  [src]="item.img ? item.img : item.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />    
+                <div class="userNames">
+                    <h4 style="color: white">{{item.login}}</h4>
+                    <p style="color: deepskyblue">{{item.fullName}}</p>
+                </div>
+            </div>
+            <button class="btn btn-success left">Follow</button>
+        </div>
+        <h5>Global search</h5>
+        <div class="userCard" *ngFor="let item of slicedArray | filter:searchText">
+            <div class="flexRow">
+                <img class="ava"  [src]="item.img ? item.img : item.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />    
+                <div class="userNames">
+                    <h4 style="color: white">{{item.login}}</h4>
+                    <p style="color: deepskyblue">{{item.fullName}}</p>
+                </div>
+            </div>
+            <button class="btn btn-success left">Follow</button>
+        </div>
+    </div>
+</div>

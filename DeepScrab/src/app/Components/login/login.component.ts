@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
     this.regPasswordInp == this.regPasswordInpConfirm){
         let object = {
           fullName: this.regNicknameInp, 
-          login: `@${this.regLoginInp}`, 
+          login: this.regLoginInp, 
           password: this.regPasswordInp, 
           img: null, 
           posts: [], 

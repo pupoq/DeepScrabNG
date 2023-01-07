@@ -3,6 +3,14 @@
     width: 100%;
 }
 
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
 .cont {
     padding: 20px;
     display: flex;
@@ -13,7 +21,6 @@
     padding: 10px;
     position: relative;
     width: 50%;
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
@@ -30,18 +37,20 @@
 }
 
 .col {
-    margin: 20px;
     display: flex;
     flex-direction: row;
 }
 
 .blue {
     color:deepskyblue;
+    position: relative;
+    top: -15px;
 }
 
 .orange {
     background: orange;
     border: none;
+    margin-left: 10px;
 }
 
 .userInfo {
@@ -61,6 +70,7 @@
     padding: 5px;
     border: 1px solid orange;
     border-radius: 5px;
+    margin-top: 10px;
 }
 
 #fileInp {
@@ -117,6 +127,96 @@
 }
 
 .postImg {
-    max-width: 300px;
+    max-width: 400px;
     min-width: 50px;
 }
+
+.postsBlock {
+    padding: 10px;
+    background: rgb(255, 205, 112);
+    color: white;
+    margin: 10px;
+    flex-direction: column;
+    width: 400px;
+    transition: 0.3s;
+}
+
+
+
+.postAva {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.end {
+    justify-content: space-between;
+}
+
+.postFullName {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.trash {
+    width: 24px; 
+    height: 24px;
+    display: none;
+    cursor: pointer;
+}
+
+.postsBlock:hover {
+    box-shadow: 0 0 10px orange;
+    transition: 0.3s;
+}
+
+.postsBlock:hover .trash {
+    display: block;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    position: fixed;
+    left: 40px;
+    bottom: -100px;
+    padding: 10px;
+    background: orange;
+    color: white;
+    box-shadow: -10px 10px rgb(228, 191, 123);
+}
+
+@keyframes ar {
+    0% {
+        bottom: -100px;
+    }
+    30% {
+        bottom: 40px;
+    }
+
+    80% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: -40px;
+    }
+}
+
+.disappear {
+    animation: 3s ar;
+}
+
+
+
+

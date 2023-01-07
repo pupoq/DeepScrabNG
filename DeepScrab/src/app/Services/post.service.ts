@@ -19,4 +19,8 @@ export class PostService {
     let myProfile = JSON.parse(this.user)
     return this._http.get(`http://localhost:8080/posts/${myProfile._id}`)
   }
+
+  deleteOne = (id: any) => {
+    return this._http.delete(`http://localhost:8080/posts/delete/${id}`)
+  }
 }

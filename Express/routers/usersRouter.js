@@ -14,18 +14,25 @@ usersRouter.post('/filter', async (req, res) => {
 
 usersRouter.get('/:id', async (req, res) => {
     const id = req.params.id
-    const users = await models.User.findOne({id: id})
+    const users = await models.User.findById(id)
     res.status(200).send(users)
 })
 
+
 usersRouter.put('/', async (req, res) => {
     const {login, fullName} = req.body
-    const users = await models.User.updateOne({login: login}, {$set: {fullName: fullName}})
+    const users = await models.User.findByIdAndUpdate({login: login}, {$set: {fullName: fullName}})
+    res.status(200).send(users)
+})
+
+usersRouter.put('/ava', async (req, res) => {
+    const {id, img} = req.body
+    const users = await models.User.findByIdAndUpdate(id, {$set: {img: img}})
     res.status(200).send(users)
 })
 
 usersRouter.post('/', async (req, res) => {
-    const {fullName, login, password, img, posts, birth, events, followers, likes, news} = req.body
+    const {fullName, login, password, img, posts, birth, events, followers, news} = req.body
 
     let check = await models.User.findOne({login: login})
     
@@ -35,8 +42,7 @@ usersRouter.post('/', async (req, res) => {
         let newUser = new models.User({fullName, login, password, img, posts, birth, events, followers, likes, news})
         await newUser.save()
         res.status(200).send('User created')
-    }
-    
+    }  
 })
 
 usersRouter.post('/login', async (req, res) => {
