@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
           birth: '', 
           events: [], 
           followers: [], 
-          likes: [], 
+          following: [],
           news: []
         }
     

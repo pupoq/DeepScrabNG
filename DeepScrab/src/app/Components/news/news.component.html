@@ -1,0 +1,17 @@
+<div class="reverse">
+    <div *ngIf="!loading" class="spinner-border text-warning" style="margin-top: 10px" role="status">
+        <span class="visually-hidden top">Loading...</span>
+    </div>
+    <div class="postsBlock" *ngFor="let item of filteredPosts">
+        <div class="col end">
+            <div class="col">
+                <img class="postAva"  [src]="item.img ? item.img : user.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                 
+                <div class="column">
+                    <span class="postFullName">{{item.fullName}}</span>
+                    <div style="font-size: 10px; margin-left: 10px;">{{item.createdAt}}</div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 10px">{{item.description}}</div>
+    </div>
+</div>

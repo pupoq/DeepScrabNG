@@ -11,7 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
 import { SettingsComponent } from './Components/settings/settings.component';
 import { FriendsListComponent } from './Components/friends-list/friends-list.component';
-import {Ng2SearchPipeModule} from 'ng2-search-filter'
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { EventsComponent } from './Components/events/events.component';
+import { NewsComponent } from './Components/news/news.component';
+import { FriendsProfileComponent } from './Components/friends-profile/friends-profile.component';
+import { ErrorPageComponent } from './Components/error-page/error-page.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter'
     HomeComponent,
     SettingsComponent,
     FriendsListComponent,
+    EventsComponent,
+    NewsComponent,
+    FriendsProfileComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

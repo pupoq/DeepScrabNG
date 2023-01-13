@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FindOneService } from 'src/app/Services/find-one.service';
 import { PostService } from 'src/app/Services/post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import { PostService } from 'src/app/Services/post.service';
 export class HomeComponent implements OnInit {
 
   constructor(private findOne: FindOneService,
-              private post: PostService
+              private post: PostService,
+              private router: Router
     ) { }
 
   user: any;
@@ -31,25 +33,36 @@ export class HomeComponent implements OnInit {
   check: Boolean = false
   arrCount: number = 0
 
+  arrayFriends: any = []
+
   async ngOnInit(){
      this.findOne.getProfile()
-    .subscribe(res => {this.user = res; this.loading = !this.loading})
+    .subscribe(res => {this.user = res; this.loading = !this.loading;
+      this.findOne.getAllProfiles()
+    .subscribe(res2 => {this.filterFriends(res2)})      
+    })
     this.post.findAllMyPosts()
     .subscribe(res => {this.reverse(res)})
   }
 
-
-
-  getFile($event: any){
-    if($event.target.files){
-      let reader = new FileReader()
-      reader.readAsDataURL($event.target.files[0])
-      reader.onload=(event:any)=> {
-        this.image = event.target.result
-        console.log(event.target.result)
+  filterFriends(array: any){
+    for(let item of array){
+      if(this.user.friends.includes(item._id)){
+        this.arrayFriends.push(item)
       }
     }
   }
+
+  // getFile($event: any){
+  //   if($event.target.files){
+  //     let reader = new FileReader()
+  //     reader.readAsDataURL($event.target.files[0])
+  //     reader.onload=(event:any)=> {
+  //       this.image = event.target.result
+  //       console.log(event.target.result)
+  //     }
+  //   }
+  // }
 
   newPost = () => {
     this.postsLoading = false
@@ -65,7 +78,7 @@ export class HomeComponent implements OnInit {
         fullName: this.user.fullName,
         createdAt: createdAt,
         description: this.postText,
-        img: this.image
+        img: ''
       }
         this.post.post(object)
         .subscribe(res => {console.log(res); 
@@ -100,6 +113,11 @@ export class HomeComponent implements OnInit {
       setTimeout(() => this.messageBlock = false, 3000)
     }
     )
+  }
+
+  viewDetail(id: any){
+    let url: string = '/friends/' + id
+    this.router.navigateByUrl(url)
   }
 
 }

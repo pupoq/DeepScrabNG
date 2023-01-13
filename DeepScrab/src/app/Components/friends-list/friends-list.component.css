@@ -32,10 +32,16 @@
     padding: 20px;
     background-color: rgb(255, 213, 135);
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .left {
     margin-left: 100px;
+}
+
+.left:focus {
+    background-color: rgb(172, 172, 32);
 }
 
 .searchInp {
@@ -48,4 +54,12 @@
 
 .searchInp:focus {
     outline: none;
+}
+
+.none {
+    display: none;
+}
+
+.btn2:focus {
+    color: red
 }

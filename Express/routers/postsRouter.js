@@ -9,7 +9,7 @@ postsRouter.get('/', async (req, res) => {
 
 
 postsRouter.post('/', async (req,res) => {
-    let {description, owner, img, fullName, ava, createdAt} = req.body
+    let {description, owner, img, fullName, createdAt} = req.body
 
     let newPost = new models.Post({
         img, 
@@ -17,9 +17,15 @@ postsRouter.post('/', async (req,res) => {
         owner, 
         fullName,
         createdAt,
-        likes: [],
-        comments: []
     })
+
+    const user = await models.User.findById({_id: owner})
+
+    for(let item of user.friends){
+        const friend = await models.User.findById({_id: item})
+        friend.news.push(newPost._id)
+        await friend.save()
+    }
 
     newPost.save()
 
@@ -30,6 +36,7 @@ postsRouter.get('/:id', async (req, res) => {
     const owner = req.params.id
     const posts = await models.Post.find({owner: owner})
 
+    console.log(posts)
     res.status(200).send(posts)
 })
 

@@ -1,0 +1,40 @@
+.postsBlock {
+    padding: 10px;
+    background: rgb(255, 205, 112);
+    color: white;
+    margin: 10px;
+    flex-direction: column;
+    width: 400px;
+    transition: 0.3s;
+}
+
+.end {
+    justify-content: space-between;
+}
+
+
+.col {
+    display: flex;
+    flex-direction: row;
+}
+
+.postFullName {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.postAva {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FindOneService } from 'src/app/Services/find-one.service';
-
+import { FollowService } from 'src/app/Services/follow.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-friends-list',
   templateUrl: './friends-list.component.html',
@@ -8,7 +9,12 @@ import { FindOneService } from 'src/app/Services/find-one.service';
 })
 export class FriendsListComponent implements OnInit {
 
-  constructor(private findOne: FindOneService) { }
+  constructor(private findOne: FindOneService,
+              private follow: FollowService,
+              private router: Router
+    ) { }
+
+    btn: boolean = true
 
   user: any;
 
@@ -18,7 +24,9 @@ export class FriendsListComponent implements OnInit {
 
   searchText: string = ''
 
-  userArray: any;
+  globalSearch: string = ''
+
+  userArray: any = []
 
   slicedArray: any = [];
 
@@ -26,24 +34,33 @@ export class FriendsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.findOne.getProfile()
-    .subscribe(res => {this.user = res})
-    this.findOne.getAllProfiles()
-    .subscribe(res => {this.userArray = res; 
-      this.loading = true; 
-      console.log(res);
-    this.slice()})
+    .subscribe(res => {this.user = res; this.loading = !this.loading;
+      this.findOne.getAllProfiles()
+    .subscribe(res2 => {this.slice(res2)})      
+    })
   }
 
-  slice(){
-    for(let item of this.userArray){
-      if(item.login !== this.parseUser.login){
-        this.slicedArray.push(item)
-      }
-    }
-    if(this.user.followers.length == 0){
+  toFollow(id: string){
+    this.follow.follow(this.parseUser._id, id)
+    .subscribe(res => {console.log(res)})
+  }
+
+  slice(array: any){
+    if(this.user.friends.length != 0){
       this.checkFollowers = true
     }
-    console.log(this.slicedArray)
+    for(let item of array){
+      if(this.user.friends.includes(item._id)){
+        this.slicedArray.push(item)
+      } else if(!this.user.friends.includes(item._id) && item.login !== this.user.login){
+        this.userArray.push(item)
+      }
+    }
+  }
+
+  viewDetail(id: any){
+    let url: string = '/friends/' + id
+    this.router.navigateByUrl(url)
   }
 
 }

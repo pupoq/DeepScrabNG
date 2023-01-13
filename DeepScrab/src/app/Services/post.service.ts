@@ -9,6 +9,10 @@ export class PostService {
 
   constructor(public _http: HttpClient) { }
  
+  getAllPosts(){
+    return this._http.get('http://localhost:8080/posts')
+  }
+
   post = (object: any) => {
    return this._http.post('http://localhost:8080/posts', object)
   }
@@ -18,6 +22,10 @@ export class PostService {
   findAllMyPosts = () => {
     let myProfile = JSON.parse(this.user)
     return this._http.get(`http://localhost:8080/posts/${myProfile._id}`)
+  }
+
+  findAllFriendsPost = (id: any) => {
+    return this._http.get(`http://localhost:8080/posts/${id}`)
   }
 
   deleteOne = (id: any) => {

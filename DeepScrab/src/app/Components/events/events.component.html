@@ -1,0 +1,9 @@
+<div class="cont">
+    <div *ngIf="!loading" class="spinner-border text-warning" style="margin-top: 10px" role="status">
+        <span class="visually-hidden top">Loading...</span>
+    </div>
+    <div class="item" *ngFor="let item of user.events">
+        <div style="color: rgb(206, 134, 0)">{{item.login}}</div><span style="margin-left: 8px">{{item.message == 'friend' ? 'wants to be ypur friend!' : 'accepted your request!'}}</span>
+        <button *ngIf="item.type == 'friend'" (click)="accept(item.id)" for="check" class="btn btn-success left">Accept</button>
+    </div>
+</div>

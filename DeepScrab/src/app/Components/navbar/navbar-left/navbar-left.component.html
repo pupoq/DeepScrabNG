@@ -4,8 +4,7 @@
             <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/5629/5629505.png">
         </div>
         <div class="link" routerLink="">
-            <img class="ava"  [src]="parseUserInfo.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                 
-            <!-- <img class="ava"  [src]="user.img ? user.img : user.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                  -->
+            <img class="ava"  [src]="user.img ? user.img : user.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                 
             <div class="menu-title {{open ? '' : 'none'}}">{{user.fullName}}</div>
         </div>
         <div class="link" routerLink="news">
@@ -14,7 +13,7 @@
         </div>
         <div class="link" routerLink="friends">
             <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432428.png">
-            <div class="menu-title {{open ? '' : 'none'}}">{{loading ? 'Following' : ''}}</div>
+            <div class="menu-title {{open ? '' : 'none'}}">{{loading ? 'Friends' : ''}}</div>
         </div>
         <div class="link" routerLink="messages">
             <img class="menu-icon" src="https://cdn-icons-png.flaticon.com/512/432/432386.png">

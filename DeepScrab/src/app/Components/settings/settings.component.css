@@ -27,6 +27,7 @@
 .label {
     border-radius: 100%;
     position: relative;
+    cursor: pointer;
 }
 
 .label:active {
@@ -70,4 +71,96 @@
 
 .left {
     margin-left: 10px;
+}
+
+.avaItem {
+    width: 150px;
+    margin: 10px;
+    transition: 0.3s;
+    border-radius: 100%;
+}
+
+.avaItem:hover {
+    box-shadow: 0 0 15px orange;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+.avatarsBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.arrow {
+    width: 50px;
+    margin: 10px;
+}
+
+.confirm {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+
+.confirm:hover {
+    box-shadow: 0 0 15px greenyellow;
+    border-radius: 100%;
+}
+
+.animation {
+    animation: 0.3s ar;
+}
+
+@keyframes ar {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.item {
+    height: 30px;
+    margin: 5px;
+}
+
+.inp {
+    margin: 5px;
+}
+
+#male {
+    margin-right: 5px;
+}
+
+#female {
+    margin-right: 5px;
+    margin-left: 20px;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.red {
+    color: red
 }

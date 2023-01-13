@@ -5,12 +5,13 @@ const userSchema = new Schema({
     fullName: String,
     login: String,
     password: String,
-    birth: String,
     posts: Array,
     img: String,
-    followers: Array,
+    friends: Array,
     events: Array,
-    news: Array
+    news: Array,
+    description: String,
+    sex: Boolean
 })
 
 const postSchema = new Schema({
@@ -18,9 +19,7 @@ const postSchema = new Schema({
     description: String,
     owner: String,
     fullName: String,
-    likes: Array,
     createdAt: String,
-    comments: Array
 })
 
 module.exports = {

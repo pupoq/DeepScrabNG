@@ -25,24 +25,10 @@
                 <br>
                 <h1 class="userTitle">{{user.fullName}}</h1>
                 <h5 class="userTitle blue">@{{user.login | lowercase }}</h5>
-                <button class="btn btn-success orange" routerLink="settings">Settings</button>
             </div>
         </div>
     </div>
-    <div class="loading" *ngIf="loading">
-        <div class="postBlock">
-            <div>
-                <textarea [(ngModel)]="postText" placeholder="Create a new post" class="textarea " type="text"></textarea>
-                <!-- <img class="postImg" [src]="image"/> -->
-            </div>
-            <div class="inpRight ">
-                <button class="btnPost" (click)="newPost()">Post</button>
-                <!-- <label for="fileInp">
-                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5629/5629438.png">
-                    <input (change)="getFile($event)" id="fileInp" type="file">
-                </label> -->
-            </div>
-        </div>
+    <div class="loading" *ngIf="postsLoading">
         <div class="postsBlock" *ngFor="let item of posts; let i = index">
             <div class="col end">
                 <div class="col">
@@ -52,17 +38,10 @@
                         <div style="font-size: 10px; margin-left: 10px;">{{item.createdAt}}</div>
                     </div>
                 </div>
-                <img (click)="deleteItem(item._id, i)" class="trash" src="https://cdn-icons-png.flaticon.com/512/5629/5629563.png">     
             </div>
             <div style="margin-top: 10px">{{item.description}}</div>
             <img class="postImg" src="{{item.img}}" alt="">
         </div>
-        <div *ngIf="!postsLoading" class="spinner-border text-warning" style="margin-top: 10px" role="status">
-            <span class="visually-hidden top">Loading...</span>
-        </div>
         <br>
-    </div>
-    <div class="message {{messageBlock? 'disappear' : ''}}">
-        {{message}}
     </div>
 </div>
