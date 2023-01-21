@@ -258,3 +258,24 @@
     color: white;
     border-radius: 10px;
 }
+
+@media screen and (max-width: 468px) {
+    .cont {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .textarea {
+        width: 250px;
+    }
+
+    .postBlock {
+        padding: 0;
+        position: relative;
+    }
+
+    .postsBlock {
+        width: 350px;
+    }
+}

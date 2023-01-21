@@ -3,7 +3,7 @@
         <span class="visually-hidden top">Loading...</span>
     </div>
     <div class="item" *ngFor="let item of user.events">
-        <div style="color: rgb(206, 134, 0)">{{item.login}}</div><span style="margin-left: 8px">{{item.message == 'friend' ? 'wants to be ypur friend!' : 'accepted your request!'}}</span>
+        <div style="color: rgb(206, 134, 0)">{{item.login}}</div><span style="margin-left: 8px">{{item.type == 'friend' ? 'wants to be your friend!' : 'accepted your request!'}}</span>
         <button *ngIf="item.type == 'friend'" (click)="accept(item.id)" for="check" class="btn btn-success left">Accept</button>
     </div>
 </div>

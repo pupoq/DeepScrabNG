@@ -22,7 +22,8 @@ const postSchema = new Schema({
     createdAt: String,
 })
 
+
 module.exports = {
     userSchema, 
-    postSchema
+    postSchema,
 }

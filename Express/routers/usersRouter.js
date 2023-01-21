@@ -85,9 +85,6 @@ usersRouter.post('/follow', async (req, res) => {
     const ownerUser = await models.User.findById(ownerId)
     const followingUser = await models.User.findById(followingId)
 
-    let errorMessage = {
-        text: 'Already sent'
-    }
 
     const message = {
         text: 'Send'
@@ -100,23 +97,25 @@ usersRouter.post('/follow', async (req, res) => {
         type: 'friend'
     }
 
+    let checking = true
+
     let check = followingUser.friends.includes(ownerId)
+    for(let item of followingUser.events){
+        if(ownerId == item.id){
+            checking = false
+            break
+        }
+    }
+
 
     if(check == true){
         res.status(200).send({text: 'Already friend'})
-    } else {
-        for(let item of followingUser.events){
-            if(item.login == ownerUser.login){
-                res.status(200).send(errorMessage)
-                break
-            } else {
-                console.log('PUSHED')
+    } else if(checking == false){
+        res.status(200).send({text: 'Already send'})
+    } else {    
                 followingUser.events.push(userObj)
                 await followingUser.save()
-                res.status(200).send(message)
-                break
-            }
-        }
+                res.status(200).send(message)           
     }
     
 })

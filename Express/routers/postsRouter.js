@@ -36,13 +36,13 @@ postsRouter.get('/:id', async (req, res) => {
     const owner = req.params.id
     const posts = await models.Post.find({owner: owner})
 
-    console.log(posts)
     res.status(200).send(posts)
 })
 
 postsRouter.delete('/delete/:id', async (req, res) => {
     const id = req.params.id
     const deletedPost = await models.Post.deleteOne({"_id": id})
+    console.log(deletedPost)
 
     res.status(200).send(deletedPost)
 })

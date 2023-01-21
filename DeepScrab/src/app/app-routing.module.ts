@@ -15,7 +15,7 @@ const routes: Routes = [
     {path: 'friends/:id', component: FriendsProfileComponent},
     {path: 'events', component: EventsComponent},
     {path: 'news', component: NewsComponent},
-    // {path: '**', component: ErrorPageComponent}
+    {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({

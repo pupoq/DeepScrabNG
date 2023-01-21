@@ -22,8 +22,9 @@ export class EventsComponent implements OnInit {
   }
 
   accept(id: string){
+    this.loading = false
     this.follow.accept(id, this.user._id)
-    .subscribe(res => console.log(res))
+    .subscribe(res => {this.user = res, this.loading = true})
   }
 
 }

@@ -25,3 +25,24 @@
 .width {
     width: 100%;
 }
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .asd {
+        margin-top: 50px;
+    }
+
+    .desktop {
+        display: none;
+    }
+}

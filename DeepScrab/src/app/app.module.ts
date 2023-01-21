@@ -15,7 +15,8 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { EventsComponent } from './Components/events/events.component';
 import { NewsComponent } from './Components/news/news.component';
 import { FriendsProfileComponent } from './Components/friends-profile/friends-profile.component';
-import { ErrorPageComponent } from './Components/error-page/error-page.component'
+import { ErrorPageComponent } from './Components/error-page/error-page.component';
+import { MobileNavbarComponent } from './Components/navbar/mobile-navbar/mobile-navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ErrorPageComponent } from './Components/error-page/error-page.component
     NewsComponent,
     FriendsProfileComponent,
     ErrorPageComponent,
+    MobileNavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ErrorPageComponent } from './Components/error-page/error-page.component
     FormsModule,
     Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

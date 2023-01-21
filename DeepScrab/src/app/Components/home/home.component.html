@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="userInfo">
-                    <div class="friends">Followers: {{user.friends.length}}</div>
+                    <div class="friends">Friends: {{user.friends.length}}</div>
                     <div class="friendBlock" *ngFor="let item of arrayFriends">
                         <div (click)="viewDetail(item._id)" class="friendBlock">
                             <img class="postAva"  [src]="item.img ? item.img : item.sex ? 'https://cdn-icons-png.flaticon.com/512/6011/6011702.png' : 'https://cdn-icons-png.flaticon.com/512/9307/9307808.png'" />                 

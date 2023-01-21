@@ -17,6 +17,7 @@ app.use('/posts', postsRouter)
 
 const CONNECTION_STRING = "mongodb+srv://Pupoq:Vasness06031412@deepscrap.j2foy3y.mongodb.net/test";
 
+
 mongoose.connect(CONNECTION_STRING, function(err){
         if(err) return console.log(err);
         app.listen(8080, () => console.log("Сервер запущен"));

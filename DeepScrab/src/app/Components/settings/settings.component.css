@@ -164,3 +164,14 @@
 .red {
     color: red
 }
+
+@media screen and (max-width: 468px) {
+    .avaItem {
+        width: 140px;
+    }
+
+    .dispRow {
+        display: flex;
+        flex-direction: column;
+    }
+}
